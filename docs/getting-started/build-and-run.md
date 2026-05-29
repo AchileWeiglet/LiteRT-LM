@@ -313,13 +313,12 @@ adb shell $DEVICE_FOLDER/litert_lm_main \
 ```
 
 To run with **GPU** backend, we need additional `.so` files. They are located in
-the `prebuilt/` subfolder in the repo (we currently only support `arm64`).
+the `prebuilt/` subfolder in the repo.
 
 ```
 # Skip model push if it is already there
 adb push $MODEL_PATH $DEVICE_FOLDER/model.litertlm
 
-adb push prebuilt/android_arm64/*.so $DEVICE_FOLDER
 adb push bazel-bin/runtime/engine/litert_lm_main $DEVICE_FOLDER
 
 adb shell LD_LIBRARY_PATH=$DEVICE_FOLDER \

@@ -130,8 +130,6 @@ cc_import(
 cc_library(
     name = "gemma_model_constraint_provider_shared_lib",
     srcs = select({
-        "//build_config:android_arm64": ["//prebuilt/android_arm64:libGemmaModelConstraintProvider.so"],
-        "//build_config:android_x86_64": ["//prebuilt/android_x86_64:libGemmaModelConstraintProvider.so"],
         "//build_config:linux_x86_64": ["//prebuilt/linux_x86_64:libGemmaModelConstraintProvider.so"],
         "//build_config:linux_arm64": ["//prebuilt/linux_arm64:libGemmaModelConstraintProvider.so"],
         "//build_config:ios_sim_arm64": ["//prebuilt/ios_sim_arm64:libGemmaModelConstraintProvider.dylib"],
